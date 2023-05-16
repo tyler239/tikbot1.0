@@ -21,7 +21,8 @@ def main() :
         awaitPure()
 
         #Clicking on the login button
-        locateAndClick('login.png')
+        try : locateAndClick('login.png')
+        except : logout(profile_icon, logout_location)
         randomAwait()
 
         #Click in the button "Use phone/ email/ username"

@@ -49,16 +49,16 @@ def randomMovement() :
 
 #Functions related to the video
 def getVideoPath() :
-        numbers = []
+        video_options = []
         path = os.path.join(os.getcwd(), 'Assets', 'Videos')
         for filename in os.listdir(path) :
-                numbers.append(re.search(r'\d+', filename).group())
+                video_options.append(filename)
 
-        if len(numbers) == 0 :
+        if len(video_options) == 0 :
                 print('There is no video to upload')
                 raise Exception('There is no video to upload') 
               
-        return os.path.join(os.getcwd(), 'Assets', 'Videos', 'video' + min(numbers) + '.mp4')
+        return os.path.join(os.getcwd(), 'Assets', 'Videos', random.choice(video_options))
 
 def excludeUsedVideo(path) :
         os.remove(path)
@@ -114,3 +114,4 @@ def logout(profile_icon, logout_locatoin) :
       pyautogui.click(logout_locatoin ,duration = 1)
       awaitPure()
       pyautogui.hotkey('ctrl', 'w')
+      exit()
