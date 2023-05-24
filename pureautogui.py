@@ -1,6 +1,5 @@
 #Importing the libraries
 import webbrowser, pyautogui
-from time import sleep
 from Utils.utils import *
 
 #Put here the (x,y) location of the required elements
@@ -116,7 +115,6 @@ def main() :
         #Close the window
         pyautogui.hotkey('ctrl', 'w')
         
-    excludeUsedVideo(path)
    
 
 if __name__ == '__main__' :
